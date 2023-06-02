@@ -17,7 +17,7 @@ function App() {
     })
   }
 
-  useState(()=>{
+  useEffect(()=>{
     getGalleryItems()
   }, [])
 
