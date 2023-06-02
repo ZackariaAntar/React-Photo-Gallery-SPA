@@ -1,7 +1,28 @@
+import { useState, useEffect } from 'react';
 import React from 'react';
 import './App.css';
+import Axios from 'axios';
+
 
 function App() {
+  const [galleryList, setGalleryList] = useState([])
+
+  const getGalleryItems = () => {
+    Axios.get('/gallery')
+    .then((response)=>{
+      console.log(response.data);
+      setGalleryList(response.data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+
+  useState(()=>{
+    getGalleryItems()
+  }, [])
+
+
+
     return (
       <div className="App">
         <header className="App-header">
