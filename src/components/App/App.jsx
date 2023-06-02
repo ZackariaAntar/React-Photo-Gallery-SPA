@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import Axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
+import GalleryForm from "../GalleryForm/GalleryForm";
 
 // TODO STRECH GOALS:
 //------------------- Feature DB -------------------------------//
@@ -52,6 +53,7 @@ function App() {
 				<h1 className="App-title">Gallery of My Life</h1>
 			</header>
 			<main>
+				<GalleryForm data={getGalleryData} />
 				<GalleryList galleryList={galleryList} data={getGalleryData} />
 			</main>
 		</div>
