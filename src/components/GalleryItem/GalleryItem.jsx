@@ -20,15 +20,13 @@ function GalleryItem(props) {
 
 	return (
 		<>
-			<div>
-				<p onClick={() => setSelected(!selected)}>
+				<div onClick={() => setSelected(!selected)}>
 					{selected ? (
 						<p>{item.description}</p>
 					) : (
 						<img src={item.path}></img>
 					)}
-				</p>
-                </div>
+				</div>
 
 				<div>
 					<button onClick={() => increaseLikes(item.id)}>
