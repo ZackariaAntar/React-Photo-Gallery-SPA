@@ -28,14 +28,15 @@ function GalleryItem(props) {
 						<img src={item.path}></img>
 					)}
 				</p>
+                </div>
 
-				<p>
+				<div>
 					<button onClick={() => increaseLikes(item.id)}>
 						I love it!
 					</button>
 					<p>{item.likes} people love this!</p>
-				</p>
-			</div>
+				</div>
+
 		</>
 	);
 }
