@@ -7,7 +7,7 @@ import Axios from 'axios';
 function App() {
   const [galleryList, setGalleryList] = useState([])
 
-  const getGalleryItems = () => {
+  const getGalleryData = () => {
     Axios.get('/gallery')
     .then((response)=>{
       console.log(response.data);
@@ -18,7 +18,7 @@ function App() {
   }
 
   useEffect(()=>{
-    getGalleryItems()
+    getGalleryData()
   }, [])
 
 

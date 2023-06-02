@@ -1,6 +1,7 @@
 
 function GalleryList(props){
     let galleryList = props.galleryList
+    let getGalleryData = props.getGalleryData
 
     return (
         <>
@@ -9,7 +10,7 @@ function GalleryList(props){
             </div>
             <div>
                 {galleryList.map((item)=>(
-                    <GalleryItem key={item.id} item={item} />
+                    <GalleryItem key={item.id} item={item} getGalleryData={getGalleryData}/>
                 ))}
             </div>
 
