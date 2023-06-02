@@ -1,27 +1,24 @@
 import Axios from "axios";
 import { useState } from "react";
 
-function GalleryItem(props){
+function GalleryItem(props) {
+	let item = props.item;
+	let getGalleryData = props.data;
 
-    let item = props.item
-    let getGalleryData = props.data
+	const [selected, setSelected] = useState(false);
 
-    // const [likeCount, setLikeCount] = useState(item.likes)
-    const [selected, setSelected]= useState(false)
+	const increaseLikes = (id) => {
+		Axios.put("/gallery/like/" + id)
+			.then((response) => {
+				console.log(response);
+				getGalleryData();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
-    const increaseLikes = (id) => {
-        Axios.put('/gallery/like/'+id)
-        .then((response)=>{
-            console.log(response);
-            getGalleryData()
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-    }
-
-
-    return (
+	return (
 		<>
 			<div>
 				<p onClick={() => setSelected(!selected)}>
@@ -41,8 +38,6 @@ function GalleryItem(props){
 			</div>
 		</>
 	);
-
-
 }
 
-export default GalleryItem
+export default GalleryItem;
