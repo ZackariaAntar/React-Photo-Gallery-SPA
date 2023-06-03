@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import React from "react";
+// import { Container } from "@mui/material";
 import "./App.css";
 import Axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
+import DialogForm from "../DialogForm/DialogForm";
 
 // TODO STRECH GOALS:
 //------------------- Feature DB ------DONE-----------//
@@ -16,7 +18,7 @@ import GalleryForm from "../GalleryForm/GalleryForm";
 //    Client side form (use absolute URL for images)
 //    Server side route for posting an image
 
-//--------------------- Feature DELETE -------------------------------//
+//--------------------- Feature DELETE -------DONE----------------//
 //  Add ability to delete a gallery item
 
 //------------------- Feature STYLES ----------------------------//
@@ -53,7 +55,10 @@ function App() {
 				<h1 className="App-title">Gallery of My Life</h1>
 			</header>
 			<main>
-				<GalleryForm data={getGalleryData} />
+				<DialogForm>
+					<GalleryForm data={getGalleryData} />
+				</DialogForm>
+
 				<GalleryList galleryList={galleryList} data={getGalleryData} />
 			</main>
 		</div>

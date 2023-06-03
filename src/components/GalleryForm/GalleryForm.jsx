@@ -22,23 +22,29 @@ function GalleryForm(props){
 
     return (
 		<>
-			<form onSubmit={addToGallery}>
-				<label>PICTURE URL:</label>
-				<input
-					value={pathInput}
-					type="text"
-					placeholder="Add the url to your picture here"
-					id=""
-					onChange={(e) => setPathInput(e.target.value)}
-				/>
-				<label>DESCRIPTION:</label>
-				<input
-					value={descInput}
-					type="text"
-					placeholder="Brief description of your picture"
-					id=""
-					onChange={(e) => setDescInput(e.target.value)}
-				/>
+			<form className="GalleryForm" onSubmit={addToGallery}>
+				<h2>Add to your Gallery</h2>
+				<div className="pictureInput">
+					<label>PICTURE URL:</label>
+					<input
+						value={pathInput}
+						type="text"
+						placeholder="Add the url to your picture here"
+						id=""
+						onChange={(e) => setPathInput(e.target.value)}
+					/>
+				</div>
+				<div className="descriptionInput">
+					<label>DESCRIPTION:</label>
+					<input
+						value={descInput}
+						type="text"
+						placeholder="Brief description of your picture"
+						id=""
+						onChange={(e) => setDescInput(e.target.value)}
+					/>
+				</div>
+
 				<button type="submit">Submit</button>
 			</form>
 		</>

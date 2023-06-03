@@ -1,5 +1,8 @@
+
+
 .App {
   text-align: center;
+  background-color: rgb(62, 62, 85);
 }
 
 .App-header {
@@ -12,4 +15,44 @@
 .App-title {
   font-size: 1.5em;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GalleryForm{
+  max-width: 650px;
+  border-style:hidden;
+  box-shadow: 0 0 1rem  rgba(0, 0, 0, .2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(0, 30, 255);
+}
+
+.pictureInput{
+  margin: 20px 20px 20px 20px;
+}
+
+.pictureInput>input{
+  width: 300px;
+  margin: 10px 10px 10px 10px;
+
+
+}
+.descriptionInput {
+  margin: 20px 20px 20px 20px;
+}
+.descriptionInput>input {
+  width: 300px;
+  margin: 10px 10px 10px 10px;
+}
+
+
+
+
 
