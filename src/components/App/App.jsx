@@ -6,6 +6,7 @@ import Axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
 import DialogForm from "../DialogForm/DialogForm";
+import {Grid, Box } from "@mui/material";
 
 // TODO STRECH GOALS:
 //------------------- Feature DB ------DONE-----------//
@@ -51,16 +52,26 @@ function App() {
 
 	return (
 		<div className="App">
+			
 			<header className="App-header">
 				<h1 className="App-title">Gallery of My Life</h1>
 			</header>
-			<main>
-				<DialogForm>
-					<GalleryForm data={getGalleryData} />
-				</DialogForm>
 
+			<DialogForm>
+				<GalleryForm data={getGalleryData} />
+			</DialogForm>
+
+			<h1>My Gallery</h1>
+
+			<Grid
+				container
+				display="flex"
+				flexDirection="row"
+				justifyContent="center"
+			>
 				<GalleryList galleryList={galleryList} data={getGalleryData} />
-			</main>
+			</Grid>
+
 		</div>
 	);
 }
