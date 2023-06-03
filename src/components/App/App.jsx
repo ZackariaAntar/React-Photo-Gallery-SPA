@@ -6,12 +6,12 @@ import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
 
 // TODO STRECH GOALS:
-//------------------- Feature DB -------------------------------//
+//------------------- Feature DB ------DONE-----------//
 //  Migrate data to DB called "react_gallery"
 //    Connect DB to project through pg etc..
 //    Create and update DB.sql file in project
 
-//-------------------- Feature FORM ---------------------------------//
+//-------------------- Feature FORM ------DONE------------------//
 //  Add a form (new component) that allows a user to POST a new gallery item
 //    Client side form (use absolute URL for images)
 //    Server side route for posting an image

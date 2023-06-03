@@ -8,7 +8,7 @@ function GalleryForm(props){
     const [descInput, setDescInput]=useState('')
 
     const addToGallery = () => {
-        Axios.post('/gallery/new', {path:pathInput, description:descInput, likes:0})
+        Axios.post('/gallery/new', {path:pathInput, description:descInput})
         .then((result)=>{
             console.log(result);
             setPathInput('')

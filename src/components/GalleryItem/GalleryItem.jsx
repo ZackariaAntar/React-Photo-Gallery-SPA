@@ -7,8 +7,8 @@ function GalleryItem(props) {
 
 	const [selected, setSelected] = useState(false);
 
-	const increaseLikes = (id) => {
-		Axios.put("/gallery/like/" + id)
+	const increaseLikes = () => {
+		Axios.put("/gallery/like/" + item.id)
 			.then((response) => {
 				console.log(response);
 				getGalleryData();
@@ -18,23 +18,35 @@ function GalleryItem(props) {
 			});
 	};
 
+	const deleteItem = () => {
+		Axios.delete('/gallery/delete/'+item.id)
+		.then((response)=>{
+			console.log(response);
+			getGalleryData();
+		}).catch((err)=>{
+			console.log(err);
+		})
+	}
+
 	return (
 		<>
-				<div onClick={() => setSelected(!selected)}>
-					{selected ? (
+			<div onClick={() => setSelected(!selected)}>
+				{selected ? (
+					<div>
 						<p>{item.description}</p>
-					) : (
+					</div>
+				) : (
+					<div>
 						<img src={item.path}></img>
-					)}
-				</div>
+					</div>
+				)}
+			</div>
 
-				<div>
-					<button onClick={() => increaseLikes(item.id)}>
-						I love it!
-					</button>
-					<p>{item.likes} people love this!</p>
-				</div>
-
+			<div>
+				<button onClick={increaseLikes}>I love it!</button>
+				<button onClick={deleteItem}>Delete it!</button>
+				<p>{item.likes} people love this!</p>
+			</div>
 		</>
 	);
 }
