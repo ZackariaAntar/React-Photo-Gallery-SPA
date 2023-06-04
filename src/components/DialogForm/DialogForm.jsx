@@ -7,7 +7,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { purple } from "@mui/material/colors";
+
+// using an MUI dialog as a container for the form to submit new photos to the gallery.
+// structure for this dialog was pulled from the MUI documentation.
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 	"& .MuiDialogContent-root": {
@@ -47,7 +49,7 @@ BootstrapDialogTitle.propTypes = {
 	onClose: PropTypes.func.isRequired,
 };
 
-export default function DialogForm({children}) {
+export default function DialogForm({ children }) {
 	const [open, setOpen] = React.useState(false);
 
 	const handleClickOpen = () => {

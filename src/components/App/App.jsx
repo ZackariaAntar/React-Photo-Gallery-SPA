@@ -1,40 +1,18 @@
+//importing React and MUI components
 import { useState, useEffect } from "react";
 import React from "react";
-// import { Container } from "@mui/material";
 import "./App.css";
 import Axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
 import DialogForm from "../DialogForm/DialogForm";
-import {Grid, Box } from "@mui/material";
-
-// TODO STRECH GOALS:
-//------------------- Feature DB ------DONE-----------//
-//  Migrate data to DB called "react_gallery"
-//    Connect DB to project through pg etc..
-//    Create and update DB.sql file in project
-
-//-------------------- Feature FORM ------DONE------------------//
-//  Add a form (new component) that allows a user to POST a new gallery item
-//    Client side form (use absolute URL for images)
-//    Server side route for posting an image
-
-//--------------------- Feature DELETE -------DONE----------------//
-//  Add ability to delete a gallery item
-
-//------------------- Feature STYLES ----------------------------//
-//  Add styling with Material-UI https://material-ui.com/
-
-//--------------------- Feature MULTER -------------------------------//
-//  USE --> https://github.com/expressjs/multer
-
-//--------------------BRANCHING INFO-------------------------------//
-//  https://github.com/PrimeAcademy/diamond-syllabus/blob/main/cheat-sheets/git-branching-cheatsheet.md
-
+import { Grid } from "@mui/material";
 
 function App() {
+	// creating local state to store data from DB
 	const [galleryList, setGalleryList] = useState([]);
 
+	// get request for data from the DB.
 	const getGalleryData = () => {
 		Axios.get("/gallery")
 			.then((response) => {
@@ -45,11 +23,13 @@ function App() {
 				console.log(err);
 			});
 	};
-
+	// preventing an infinite loop of rerendering upon receiving data from the DB.
 	useEffect(() => {
 		getGalleryData();
 	}, []);
 
+	// rendering App and its components to the DOM.
+	// passing props to children components
 	return (
 		<div className="App">
 			<header className="App-header">
