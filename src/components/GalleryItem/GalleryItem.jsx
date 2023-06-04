@@ -46,16 +46,18 @@ function GalleryItem(props) {
 		>
 			{selected ? (
 				<CardContent
+					className="content"
 					sx={{ minHeight: 269.6 }}
 					onClick={() => setSelected(!selected)}
 				>
-						<Typography
-							variant="body2"
-							color="text.primary"
-						>
-							{item.description}
-						</Typography>
-
+					<Typography
+						className="text"
+						sx={{ fontSize: "1rem" }}
+						variant="body2"
+						color="text.primary"
+					>
+						{item.description}
+					</Typography>
 				</CardContent>
 			) : (
 				<CardMedia
@@ -67,7 +69,11 @@ function GalleryItem(props) {
 				/>
 			)}
 			<CardContent>
-				<Typography variant="body2" color="text.primary">
+				<Typography
+					sx={{ fontSize: "1.5rem" }}
+					variant="body2"
+					color="text.primary"
+				>
 					{item.likes} people love this!
 				</Typography>
 			</CardContent>
@@ -75,7 +81,7 @@ function GalleryItem(props) {
 				<IconButton
 					aria-label="like this photo"
 					onClick={increaseLikes}
-					sx={{ color: pink[300] }}
+					sx={{ color: pink[300]}}
 				>
 					<FavoriteIcon />
 				</IconButton>

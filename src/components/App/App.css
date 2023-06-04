@@ -77,6 +77,10 @@ margin: 5px 20px 5px 20px;
 .content-card{
   padding: 10px 10px 10px 10px;
 }
+.content-card.content.text{
+  font-size: 2rem;
+
+}
 
 
 
