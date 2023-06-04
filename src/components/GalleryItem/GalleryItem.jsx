@@ -61,6 +61,7 @@ function GalleryItem(props) {
 				</CardContent>
 			) : (
 				<CardMedia
+					className="content"
 					component="img"
 					height="300"
 					image={item.path}
@@ -81,7 +82,7 @@ function GalleryItem(props) {
 				<IconButton
 					aria-label="like this photo"
 					onClick={increaseLikes}
-					sx={{ color: pink[300]}}
+					sx={{ color: pink[300] }}
 				>
 					<FavoriteIcon />
 				</IconButton>
