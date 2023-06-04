@@ -23,7 +23,6 @@ function GalleryForm(props){
     return (
 		<>
 			<form className="GalleryForm" onSubmit={addToGallery}>
-				<h2>Add to your Gallery</h2>
 				<div className="pictureInput">
 					<label>PICTURE URL:</label>
 					<input
@@ -44,8 +43,9 @@ function GalleryForm(props){
 						onChange={(e) => setDescInput(e.target.value)}
 					/>
 				</div>
-
-				<button type="submit">Submit</button>
+				<div>
+					<button type="submit">Submit</button>
+				</div>
 			</form>
 		</>
 	);

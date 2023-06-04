@@ -7,6 +7,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { purple } from "@mui/material/colors";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 	"& .MuiDialogContent-root": {
@@ -58,7 +59,20 @@ export default function DialogForm({children}) {
 
 	return (
 		<div>
-			<Button variant="contained" onClick={handleClickOpen}>
+			<Button
+				variant="contained"
+				onClick={handleClickOpen}
+				sx={{
+					bgcolor: "#783FB5",
+					"&:hover": {
+						bgcolor: "#5C2C7F",
+					},
+					boxShadow: 5,
+					fontSize: 22,
+					mt: 3,
+					mb: 3,
+				}}
+			>
 				Add To Your Gallery
 			</Button>
 			<BootstrapDialog

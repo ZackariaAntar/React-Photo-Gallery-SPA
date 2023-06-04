@@ -7,8 +7,9 @@ import CardActions from "@mui/material/CardActions";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { pink } from "@mui/material/colors";
+
 
 function GalleryItem(props) {
 	let item = props.item;
@@ -38,19 +39,30 @@ function GalleryItem(props) {
 	}
 
 	return (
-		<Card className="content-card" sx={{ maxWidth: 345 }}>
+		<Card
+			key={item.id}
+			className="content-card"
+			sx={{ maxWidth: 345, bgcolor: "#FBF9FB", boxShadow: 10 }}
+		>
 			{selected ? (
-				<CardContent onClick={() => setSelected(!selected)}>
-					<Typography variant="body2" color="text.primary">
-						{item.description}
-					</Typography>
+				<CardContent
+					sx={{ minHeight: 269.6 }}
+					onClick={() => setSelected(!selected)}
+				>
+						<Typography
+							variant="body2"
+							color="text.primary"
+						>
+							{item.description}
+						</Typography>
+
 				</CardContent>
 			) : (
 				<CardMedia
 					component="img"
-					height="194"
+					height="300"
 					image={item.path}
-					alt="Paella dish"
+					alt={item.description}
 					onClick={() => setSelected(!selected)}
 				/>
 			)}
@@ -63,7 +75,7 @@ function GalleryItem(props) {
 				<IconButton
 					aria-label="like this photo"
 					onClick={increaseLikes}
-					color="secondary"
+					sx={{ color: pink[300] }}
 				>
 					<FavoriteIcon />
 				</IconButton>
