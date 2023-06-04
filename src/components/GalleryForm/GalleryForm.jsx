@@ -1,26 +1,33 @@
-import Axios from "axios"
-import { useState } from "react"
+import Axios from "axios";
+import { useState } from "react";
 
-function GalleryForm(props){
-    let getGalleryData = props.data
+function GalleryForm(props) {
+	// renaming props to match original naming conventions.
+	let getGalleryData = props.data;
 
-    const [pathInput, setPathInput]=useState('')
-    const [descInput, setDescInput]=useState('')
+	//creating two states to hold form input values that will be used in the post request.
+	const [pathInput, setPathInput] = useState("");
+	const [descInput, setDescInput] = useState("");
 
-    const addToGallery = () => {
-        Axios.post('/gallery/new', {path:pathInput, description:descInput})
-        .then((result)=>{
-            console.log(result);
-            setPathInput('')
-            setDescInput('')
-            getGalleryData()
-        }).catch((err)=>{
-            console.log(err);
-        })
-    }
+	// post request to the database using the input states
+	// clearing the input fields and calling the get request.
+	const addToGallery = () => {
+		Axios.post("/gallery/new", { path: pathInput, description: descInput })
+			.then((result) => {
+				console.log(result);
+				setPathInput("");
+				setDescInput("");
+				getGalleryData();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
-
-    return (
+	// rendering the form on the DOM.
+	// setting up event listeners on each input field using annymous functions
+	//	and an event handler to make the post request as the form is submitted.
+	return (
 		<>
 			<form className="GalleryForm" onSubmit={addToGallery}>
 				<div className="pictureInput">
@@ -51,4 +58,4 @@ function GalleryForm(props){
 	);
 }
 
-export default GalleryForm
+export default GalleryForm;

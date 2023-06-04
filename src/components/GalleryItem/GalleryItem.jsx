@@ -10,13 +10,14 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { pink } from "@mui/material/colors";
 
-
 function GalleryItem(props) {
+	// renaming props to match their original naming conventions.
 	let item = props.item;
 	let getGalleryData = props.data;
 
+	// creating a local state to manage the conditional rendering for toggling between displaying the photo and its description.
 	const [selected, setSelected] = useState(false);
-
+	// creating a put request to increase the likes on the DOM when the heart icon button is clicked.
 	const increaseLikes = () => {
 		Axios.put("/gallery/like/" + item.id)
 			.then((response) => {
@@ -27,17 +28,20 @@ function GalleryItem(props) {
 				console.log(err);
 			});
 	};
-
+	// creating a delete request to delete the card from the DOM when the trashcan icon button is clicked.
 	const deleteItem = () => {
-		Axios.delete('/gallery/delete/'+item.id)
-		.then((response)=>{
-			console.log(response);
-			getGalleryData();
-		}).catch((err)=>{
-			console.log(err);
-		})
-	}
-
+		Axios.delete("/gallery/delete/" + item.id)
+			.then((response) => {
+				console.log(response);
+				getGalleryData();
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+	// rendering the data from the DB as a Card Grid item on the DOM.
+	// assigning event handler for toggeled conditional rendering.
+	// changing some default MUI styling for the Card component using inline sx.
 	return (
 		<Card
 			key={item.id}

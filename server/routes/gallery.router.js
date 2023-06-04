@@ -4,6 +4,7 @@ const router = express.Router();
 const pool = require("../modules/pool");
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
+
 // GET Route
 router.get("/", (req, res) => {
 	const getQuery = `SELECT * FROM gallery ORDER BY "id" ASC;`;
@@ -19,6 +20,7 @@ router.get("/", (req, res) => {
 		});
 }); // END GET Route
 
+// POST Route
 router.post("/new", (req, res) => {
 	const postData = req.body;
 	const postQuery = `
@@ -33,21 +35,21 @@ router.post("/new", (req, res) => {
 			console.log("Error in post path", err);
 			res.sendStatus(500);
 		});
-});
+}); // END POST Route
 
-router.delete('/delete/:id', (req,res)=>{
-    const idToDelete = req.params.id
-    const deleteQuery = `DELETE FROM gallery WHERE id = $1;`
-    pool.query(deleteQuery,[idToDelete])
-    .then((response)=>{
-        res.sendStatus(200)
-    }).catch((error)=>{
-        console.log('error in the delete route', error);
-        res.sendStatus(500)
-    })
-
-
-})
+// DELETE Route
+router.delete("/delete/:id", (req, res) => {
+	const idToDelete = req.params.id;
+	const deleteQuery = `DELETE FROM gallery WHERE id = $1;`;
+	pool.query(deleteQuery, [idToDelete])
+		.then((response) => {
+			res.sendStatus(200);
+		})
+		.catch((error) => {
+			console.log("error in the delete route", error);
+			res.sendStatus(500);
+		});
+}); // END DELETE Route
 
 // PUT Route
 router.put("/like/:id", (req, res) => {
@@ -62,13 +64,5 @@ router.put("/like/:id", (req, res) => {
 			console.log("Error with the put route", error);
 		});
 }); // END PUT Route
-
-
-
-
-
-
-
-
 
 module.exports = router;
