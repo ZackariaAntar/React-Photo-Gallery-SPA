@@ -35,6 +35,20 @@ router.post("/new", (req, res) => {
 		});
 });
 
+router.delete('/delete/:id', (req,res)=>{
+    const idToDelete = req.params.id
+    const deleteQuery = `DELETE FROM gallery WHERE id = $1;`
+    pool.query(deleteQuery,[idToDelete])
+    .then((response)=>{
+        res.sendStatus(200)
+    }).catch((error)=>{
+        console.log('error in the delete route', error);
+        res.sendStatus(500)
+    })
+
+
+})
+
 // PUT Route
 router.put("/like/:id", (req, res) => {
 	const idToEdit = req.params.id;

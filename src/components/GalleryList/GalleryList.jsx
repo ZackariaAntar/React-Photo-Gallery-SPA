@@ -1,4 +1,5 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
+import { Grid } from "@mui/material";
 
 function GalleryList(props) {
 	let galleryList = props.galleryList;
@@ -6,17 +7,21 @@ function GalleryList(props) {
 
 	return (
 		<>
-			<h1>My Gallery</h1>
-
-			<div>
-				{galleryList.map((item) => (
-					<GalleryItem
-						key={item.id}
-						item={item}
-						data={getGalleryData}
-					/>
-				))}
-			</div>
+			{galleryList.map((item) => (
+				<Grid
+					item
+					key={item.id}
+					xs={6}
+					sm={6}
+					md={4}
+					lg={3}
+					xl={3}
+					ml={1}
+					mb={13}
+				>
+					<GalleryItem item={item} data={getGalleryData} />
+				</Grid>
+			))}
 		</>
 	);
 }

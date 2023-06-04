@@ -1,15 +1,90 @@
 .App {
   text-align: center;
+  background-color: #bdb3ce;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #613194;
   padding: 1em;
-  color: white;
+  color: #FBF9FB;
   margin-bottom: 1em;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.516);
+
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
+h1.myGallery{
+  font-size: 4rem;
+  color: #613194;
+  margin-bottom: 50px;
+}
+
+.GalleryForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border-style:hidden;
+  border-radius: 8px;
+  box-shadow: 5px 5px grey;
+  background-color:#bdb3ce;
+  color: #783FB5;
+}
+
+.GalleryForm>div>button{
+  background-color: #783FB5;
+  border: 3px solid #783FB5;
+  font-weight: bolder;
+  border-radius: 4px;
+  color: #FBF9FB;
+  padding: 10px;
+  margin-top: 5px;
+}
+.GalleryForm>div>button:hover{
+  background-color: transparent;
+  border: 3px solid #783FB5;
+  color: #783FB5;
+  cursor: pointer;
+  font-weight: bolder;
+  box-shadow: 3px 3px grey;
+}
+
+.GalleryForm > button:active{
+  transform: translateY(2px)
+}
+
+.pictureInput{
+  margin: 5px 20px 5px 20px;;
+}
+
+.pictureInput>input{
+  width: 300px;
+  margin: 5px 5px 5px 5px;
+
+}
+.descriptionInput {
+margin: 5px 20px 5px 20px;
+}
+.descriptionInput>input {
+  width: 300px;
+  margin: 5px 5px 5px 5px;
+}
+
+.content-card{
+  padding: 10px 10px 10px 10px;
+}
+.content-card.content.text{
+  font-size: 2rem;
+
+}
+
+
+
+
+
+
 

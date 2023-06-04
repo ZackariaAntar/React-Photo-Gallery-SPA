@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
 import React from "react";
+// import { Container } from "@mui/material";
 import "./App.css";
 import Axios from "axios";
 import GalleryList from "../GalleryList/GalleryList";
 import GalleryForm from "../GalleryForm/GalleryForm";
+import DialogForm from "../DialogForm/DialogForm";
+import {Grid, Box } from "@mui/material";
 
 // TODO STRECH GOALS:
-//------------------- Feature DB -------------------------------//
+//------------------- Feature DB ------DONE-----------//
 //  Migrate data to DB called "react_gallery"
 //    Connect DB to project through pg etc..
 //    Create and update DB.sql file in project
 
-//-------------------- Feature FORM ---------------------------------//
+//-------------------- Feature FORM ------DONE------------------//
 //  Add a form (new component) that allows a user to POST a new gallery item
 //    Client side form (use absolute URL for images)
 //    Server side route for posting an image
 
-//--------------------- Feature DELETE -------------------------------//
+//--------------------- Feature DELETE -------DONE----------------//
 //  Add ability to delete a gallery item
 
 //------------------- Feature STYLES ----------------------------//
@@ -52,10 +55,20 @@ function App() {
 			<header className="App-header">
 				<h1 className="App-title">Gallery of My Life</h1>
 			</header>
-			<main>
+			<DialogForm>
 				<GalleryForm data={getGalleryData} />
+			</DialogForm>
+
+			<h1 className="myGallery">My Gallery</h1>
+			<Grid
+				container
+				display="flex"
+				flexDirection="row"
+				justifyContent="space-evenly"
+				ml={7}
+			>
 				<GalleryList galleryList={galleryList} data={getGalleryData} />
-			</main>
+			</Grid>
 		</div>
 	);
 }
