@@ -7,9 +7,7 @@ function GalleryList(props) {
 
 	return (
 		<>
-			
 			{galleryList.map((item) => (
-
 					<Grid item xs={6} sm={6} md={4} lg={4} xl={3} m={5}>
 						<GalleryItem
 							key={item.id}

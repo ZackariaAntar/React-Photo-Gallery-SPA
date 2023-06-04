@@ -16,44 +16,68 @@
   font-size: 1.5em;
 }
 
-main{
+/* main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .GalleryForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 650px;
   border-style:hidden;
   box-shadow: 0 0 1rem  rgba(0, 0, 0, .2);
   border-radius: 8px;
   -webkit-backdrop-filter: blur(8px);
     /* Safari 9+ */
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(125px);
     /* Chrome and Opera */
   box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
-  background-color: rgb(228 228 228 / 15%);
+  background-color: rgba(96, 223, 255, 0.15);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: rgb(0, 30, 255);
+  color: rgb(64, 66, 81);
+}
+
+.GalleryForm>button{
+  background-color: blue;
+  border-style: hidden;
+  border-radius: 4px;
+  color: azure;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+}
+.GalleryForm>button:hover{
+  background-color: transparent;
+  border-style: inset;
+  border: 1px solid blue;
+  border-radius: 4px;
+  color: blue;
+  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+
 }
 
 .pictureInput{
-  margin: 20px 20px 20px 20px;
+  margin: 5px 20px 5px 20px;;
 }
 
 .pictureInput>input{
   width: 300px;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
 
 
 }
 .descriptionInput {
-  margin: 20px 20px 20px 20px;
+margin: 5px 20px 5px 20px;
 }
 .descriptionInput>input {
   width: 300px;
-  margin: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
 }
 
 .content-card{
@@ -61,7 +85,7 @@ main{
 }
 
 .content-card > CardActions{
-  
+
 
 }
 

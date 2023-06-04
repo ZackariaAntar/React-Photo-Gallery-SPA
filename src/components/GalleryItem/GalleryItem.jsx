@@ -1,11 +1,9 @@
 import Axios from "axios";
 import { useState } from "react";
-import { Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -42,7 +40,7 @@ function GalleryItem(props) {
 	return (
 		<Card className="content-card" sx={{ maxWidth: 345 }}>
 			{selected ? (
-				<CardContent>
+				<CardContent onClick={() => setSelected(!selected)}>
 					<Typography variant="body2" color="text.primary">
 						{item.description}
 					</Typography>
@@ -53,6 +51,7 @@ function GalleryItem(props) {
 					height="194"
 					image={item.path}
 					alt="Paella dish"
+					onClick={() => setSelected(!selected)}
 				/>
 			)}
 			<CardContent>
@@ -75,31 +74,7 @@ function GalleryItem(props) {
 				>
 					<DeleteIcon />
 				</IconButton>
-				<IconButton
-					color="success"
-					onClick={() => setSelected(!selected)}
-				>
-					<ExpandMoreIcon />
-				</IconButton>
 			</CardActions>
-
-			{/* <div onClick={() => setSelected(!selected)}>
-				{selected ? (
-					<div>
-						<p>{item.description}</p>
-					</div>
-				) : (
-					<div>
-						<img src={item.path}></img>
-					</div>
-				)}
-			</div>
-
-			<div>
-				<button onClick={increaseLikes}>I love it!</button>
-				<button onClick={deleteItem}>Delete it!</button>
-				<p>{item.likes} people love this!</p>
-			</div> */}
 		</Card>
 	);
 }
